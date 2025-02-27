@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sololeveling-v3/static/css/main.2876d0aa.css",
+    "main.js": "/sololeveling-v3/static/js/main.deed24d6.js",
+    "index.html": "/sololeveling-v3/index.html",
+    "main.2876d0aa.css.map": "/sololeveling-v3/static/css/main.2876d0aa.css.map",
+    "main.deed24d6.js.map": "/sololeveling-v3/static/js/main.deed24d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2876d0aa.css",
+    "static/js/main.deed24d6.js"
+  ]
+}
