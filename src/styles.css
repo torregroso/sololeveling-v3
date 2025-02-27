@@ -1,0 +1,407 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos Globales */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: #0a0f1e;
+  color: #f1f1f1;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.light {
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* Navegación */
+.navbar {
+  background: #1e90ff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+body.light .navbar {
+  background: #007acc;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar a:hover {
+  color: #d1eaff;
+  transform: translateY(-2px);
+}
+
+/* Contenedor de Página */
+.page {
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(30, 144, 255, 0.5);
+  animation: fadeIn 0.8s ease-out;
+  transition: background 0.3s ease;
+}
+body.light .page {
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 122, 204, 0.3);
+}
+
+/* Página de Inicio */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("https://wallpaperaccess.com/full/5280.jpg") no-repeat center
+    center/cover;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.home h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  animation: slideDown 0.8s ease-out;
+}
+
+/* Titulares */
+h1,
+h2,
+h3 {
+  text-shadow: 0 0 10px #1e90ff;
+  margin-bottom: 15px;
+}
+body.light h1,
+body.light h2,
+body.light h3 {
+  text-shadow: none;
+  color: #007acc;
+}
+
+/* Botones */
+button {
+  padding: 12px 20px;
+  margin: 8px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 0 12px rgba(30, 144, 255, 0.7);
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(30, 144, 255, 1);
+}
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+.start-button {
+  padding: 14px 28px;
+  background: rgba(30, 144, 255, 0.9);
+  font-size: 1.3rem;
+}
+
+/* Tarjetas y Elementos */
+.card,
+.mission-card,
+.task-card,
+.history-list li,
+.punishment-list li {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #1e90ff;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #1e90ff;
+  animation: fadeIn 0.6s ease-in;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+.fade-out {
+  opacity: 0;
+}
+
+/* Barra de Progreso */
+.progress-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  height: 20px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #1e90ff;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1e90ff, #00bfff);
+  width: 0;
+  border-radius: 10px;
+  transition: width 0.6s ease-in-out;
+}
+
+/* Dashboard */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  animation: fadeIn 0.8s ease-out;
+}
+.stats {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+.stats:hover {
+  transform: scale(1.02);
+}
+.stats h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #1e90ff;
+  border-bottom: 2px solid #1e90ff;
+  padding-bottom: 8px;
+}
+.attributes-summary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+.attributes-summary p {
+  background: rgba(30, 144, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.attributes-summary p:hover {
+  background: rgba(30, 144, 255, 0.2);
+  transform: scale(1.03);
+}
+
+/* Pestaña de Atributos */
+.attributes {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.4);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+.attributes:hover {
+  transform: scale(1.01);
+}
+.attributes p {
+  background: rgba(30, 144, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.attributes p:hover {
+  background: rgba(30, 144, 255, 0.2);
+  transform: scale(1.02);
+}
+.attributes button {
+  background: #1e90ff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.attributes button:hover {
+  background: #00bfff;
+  transform: scale(1.05);
+}
+
+/* Listas: Misiones y Castigos */
+.mission-list,
+.punishment-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.mission-card,
+.punishment-list li {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+body.light .mission-card,
+body.light .punishment-list li {
+  background: #f0f0f0;
+  box-shadow: 0 0 15px rgba(0, 122, 204, 0.3);
+  color: #333;
+}
+
+/* Campos de Entrada */
+input[type="text"],
+input[type="number"] {
+  padding: 12px;
+  margin: 8px;
+  border: 1px solid #1e90ff;
+  border-radius: 8px;
+  outline: none;
+  width: calc(100% - 30px);
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+body.light input[type="text"],
+body.light input[type="number"] {
+  border: 1px solid #007acc;
+}
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #00bfff;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pop-up */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.popup {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.popup button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.popup button:hover {
+  background: #00bfff;
+  transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .attributes-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .attributes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .page {
+    margin: 15px;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  .attributes-summary,
+  .attributes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+  .page {
+    padding: 15px;
+    margin: 10px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .stats h2 {
+    font-size: 1.5rem;
+  }
+  .attributes,
+  .attributes-summary {
+    grid-template-columns: 1fr;
+  }
+}
+a[href="/reset"] {
+  display: none;
+}
